@@ -1,24 +1,31 @@
-name: Deploy to cPanel
-
 on:
   push:
     branches:
-      - main  # change if you want to deploy from a different branch
+      - main
+name: 🚀 Deploy website on push
 
 jobs:
-  deploy:
+  web-deploy:
+    name: 🎉 Deploy
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout code
-        uses: actions/checkout@v2
+      - name: 🚚 Get latest code
+        uses: actions/checkout@v3
 
-      - name: Deploy to cPanel
-        env:
-          CPANEL_HOST: aa.com.ge  # Replace with your cPanel domain
-          CPANEL_USER: hs0003008               # Replace with your cPanel username
+      - name: Use Node.js 16
+        uses: actions/setup-node@v2
+        with:
+          node-version: "16"
+
+      - name: 🔨 Build Project
         run: |
-          ssh -o StrictHostKeyChecking=no -i "$CPANEL_KEY" $CPANEL_USER@$CPANEL_HOST << 'EOF'
-            cd public_html  # Change to your web root directory
-            git pull origin main  # Pulls the latest code from the main branch
-          EOF
-        shell: bash
+          npm install
+          npm run build
+
+      - name: 📂 Sync files
+        uses: SamKirkland/FTP-Deploy-Action@v4.3.4
+        with:
+          server: ${{ secrets.GIT_CPANEL_REACT_SERVER }}
+          username: ${{ secrets.GIT_CPANEL_REACT_USER }}
+          password: ${{ secrets.GIT_CPANEL_REACT_PWD }}
+          local-dir: ./build/
