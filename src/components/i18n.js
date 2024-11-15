@@ -99,7 +99,7 @@ const resources = {
         },
       },
       aboutPage: {
-        header: "ABOUT US",
+        header: "ABOUT",
         firstParagraph:
           'LLC "Nueva" is a design and surveying institution based in the city of Kutaisi. Its working area covers the western region of Georgia. Our clientele includes municipalities of various cities, sub-agencies of the Ministry, educational institutions, and primarily private organizations. The company actively participates in public procurement tenders and has successfully completed hundreds of state orders worth thousands of GEL.',
         secondParagraph:
