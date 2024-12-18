@@ -57,8 +57,8 @@ const Navbar = (props) => {
             <li className={classes.phone}>
               <img className={classes.icon} src={phone} alt="phone"></img>
               <h4 className={classes.number}>
-                <a className={classes.nomberRef} href="tel:+995593065588">
-                  593 065 588
+                <a className={classes.nomberRef} href="tel:+995595270606">
+                595 270 606
                 </a>
               </h4>
             </li>
@@ -101,8 +101,8 @@ const Navbar = (props) => {
             <li className={classes.phone}>
               <img className={classes.icon} src={phone} alt="phone"></img>
               <h4 className={classes.number}>
-                <a className={classes.nomberRef} href="tel:+995593065588">
-                  593 065 588
+                <a className={classes.nomberRef} href="tel:+995595270606">
+                595 270 606
                 </a>
               </h4>
             </li>

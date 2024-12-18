@@ -8,18 +8,16 @@ import Leaflet from "../../Map/Leaflet";
 import marker from "../../../assets/icons/marker.png";
 import { useTranslation } from "react-i18next";
 const Contact = () => {
-  const {t} = useTranslation();
+  const { t } = useTranslation();
   const openWhatsApp = () => {
-
-    const url = `https://wa.me/+995593065588`;
-    window.open(url, '_blank');
+    const url = `https://wa.me/+995595270606`;
+    window.open(url, "_blank");
   };
   return (
     <div className={classes.main}>
-            <h2 className={classes.header}>{t("contactPage.header")}</h2>
+      <h2 className={classes.header}>{t("contactPage.header")}</h2>
       <div className={classes.contact}>
         <div className={classes.content}>
-        
           <div className={classes.social}>
             <ul className={classes.list}>
               <li className={classes.listItem}>
@@ -55,17 +53,17 @@ const Contact = () => {
                     src={gmail}
                     alt="gmail"
                   ></img>
-                  <h4>Nueva@gmail.com</h4>
+                  <h4>ltd.nueva@gmail.com</h4>
                 </a>
               </li>
               <li className={classes.listItem} onClick={openWhatsApp}>
-      <img
-        className={classes.socialIcon}
-        src={whatsapp}
-        alt="phone"
-      />
-      <h4>(+995) 593 065 588</h4>
-    </li>
+                <img
+                  className={classes.socialIcon}
+                  src={whatsapp}
+                  alt="phone"
+                />
+                <h4>(+995) 595 270 606</h4>
+              </li>
               <li className={classes.listItem}>
                 <a href="tel:+995431230367," target="blank">
                   <img
@@ -79,9 +77,12 @@ const Contact = () => {
             </ul>
           </div>
           <div className={classes.address}>
-          <div className={classes.addressName}> <h4 className={classes.head}>{t("contactPage.addressHeader")}</h4>
-            <h4 className={classes.street}>{t("contactPage.street")}</h4></div>
-           
+            <div className={classes.addressName}>
+              {" "}
+              <h4 className={classes.head}>{t("contactPage.addressHeader")}</h4>
+              <h4 className={classes.street}>{t("contactPage.street")}</h4>
+            </div>
+
             <div className={classes.map}>
               {" "}
               <Leaflet
@@ -95,7 +96,6 @@ const Contact = () => {
           </div>
         </div>
       </div>
-    
     </div>
   );
 };
